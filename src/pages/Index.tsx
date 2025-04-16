@@ -1,14 +1,20 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SidebarNav } from "@/components/SidebarNav";
+import { MainContent } from "@/components/MainContent";
+import { Sidebar, SidebarProvider } from "@/components/ui/sidebar";
 
-const Index = () => {
+export default function Index() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <SidebarProvider defaultOpen>
+      <div className="flex min-h-screen">
+        <Sidebar>
+          <SidebarNav />
+        </Sidebar>
+        <main className="flex-1 p-6">
+          <MainContent />
+        </main>
       </div>
-    </div>
+    </SidebarProvider>
   );
-};
-
-export default Index;
+}
